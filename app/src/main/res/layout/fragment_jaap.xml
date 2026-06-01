@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_base"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
+
+        <!-- ScreenHeader: Jaap Mala + Settings -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:paddingStart="16dp" android:paddingEnd="16dp"
+            android:paddingTop="20dp" android:paddingBottom="16dp" android:gravity="center_vertical">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Jaap Mala" android:textColor="@color/text_primary"
+                        android:textSize="26sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text=" ✨" android:textSize="16sp" android:textColor="@color/accent" />
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Digital mantra counter" android:textColor="@color/text_muted"
+                    android:textSize="13sp" android:layout_marginTop="2dp" />
+            </LinearLayout>
+            <ImageView android:id="@+id/btn_settings" android:layout_width="40dp" android:layout_height="40dp"
+                android:background="@drawable/bg_card" android:src="@drawable/ic_astro"
+                android:padding="10dp" android:contentDescription="Settings" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingStart="16dp" android:paddingEnd="16dp">
+
+            <!-- Current Mantra Card (spirit-card) -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/bg_elevated" app:cardCornerRadius="20dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="14dp" android:gravity="center_vertical">
+                    <!-- OM circle -->
+                    <FrameLayout android:layout_width="56dp" android:layout_height="56dp">
+                        <View android:layout_width="56dp" android:layout_height="56dp"
+                            android:background="@drawable/bg_circle_accent" />
+                        <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                            android:text="ॐ" android:textColor="@color/accent" android:textSize="22sp"
+                            android:gravity="center" />
+                    </FrameLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Current Mantra" android:textColor="@color/text_muted" android:textSize="11sp" />
+                        <TextView android:id="@+id/tv_current_mantra" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="Om Namah Shivaya"
+                            android:textColor="@color/text_primary" android:textSize="14sp" android:textStyle="bold"
+                            android:layout_marginTop="2dp" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btn_change_mantra" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="Change"
+                        android:textColor="@color/accent" android:textSize="13sp" android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Progress Ring (custom view) -->
+            <com.paid.myapplication.ui.views.JaapRingView
+                android:id="@+id/jaap_ring"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Start / Reset buttons -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center"
+                android:layout_marginBottom="16dp" android:layout_marginTop="8dp">
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:gravity="center">
+                    <ImageView android:id="@+id/btn_play_pause" android:layout_width="56dp"
+                        android:layout_height="56dp" android:background="@drawable/bg_circle_border"
+                        android:src="@drawable/ic_play" android:padding="14dp"
+                        android:contentDescription="Play/Pause" />
+                    <TextView android:id="@+id/tv_play_label" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="Start"
+                        android:textColor="@color/text_muted" android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <View android:layout_width="40dp" android:layout_height="1dp" />
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:gravity="center">
+                    <ImageView android:id="@+id/btn_reset" android:layout_width="56dp"
+                        android:layout_height="56dp" android:background="@drawable/bg_circle_border"
+                        android:src="@drawable/ic_refresh" android:padding="14dp"
+                        android:contentDescription="Reset" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Reset" android:textColor="@color/text_muted" android:textSize="12sp"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Stats Row (StatsRow) -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/bg_elevated" app:cardCornerRadius="20dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center"
+                        android:paddingTop="16dp" android:paddingBottom="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Target Count" android:textColor="@color/text_muted"
+                            android:textSize="10sp" android:textAllCaps="true" />
+                        <TextView android:id="@+id/tv_target" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="108"
+                            android:textColor="@color/text_primary" android:textSize="18sp" android:textStyle="bold"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                    <View android:layout_width="1dp" android:layout_height="60dp"
+                        android:background="@color/border" android:layout_gravity="center_vertical" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center"
+                        android:paddingTop="16dp" android:paddingBottom="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Completed" android:textColor="@color/text_muted"
+                            android:textSize="10sp" android:textAllCaps="true" />
+                        <TextView android:id="@+id/tv_count" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0"
+                            android:textColor="@color/green_accent" android:textSize="18sp" android:textStyle="bold"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                    <View android:layout_width="1dp" android:layout_height="60dp"
+                        android:background="@color/border" android:layout_gravity="center_vertical" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center"
+                        android:paddingTop="16dp" android:paddingBottom="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Time Elapsed" android:textColor="@color/text_muted"
+                            android:textSize="10sp" android:textAllCaps="true" />
+                        <TextView android:id="@+id/tv_elapsed" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="00:00"
+                            android:textColor="@color/blue_accent" android:textSize="18sp" android:textStyle="bold"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Feature Grid (2x2 FeatureTile) -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+                <androidx.cardview.widget.CardView android:id="@+id/tile_reminder"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginEnd="6dp"
+                    app:cardBackgroundColor="@color/bg_elevated" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="🔔" android:textSize="24sp" android:layout_marginBottom="8dp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Reminder" android:textColor="@color/text_primary" android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView android:id="@+id/tv_reminder_status" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="Off ›"
+                            android:textColor="@color/text_muted" android:textSize="12sp"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:id="@+id/tile_stats"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="6dp"
+                    app:cardBackgroundColor="@color/bg_elevated" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="📊" android:textSize="24sp" android:layout_marginBottom="8dp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Stats" android:textColor="@color/text_primary" android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="View ›" android:textColor="@color/text_muted" android:textSize="12sp"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+                <androidx.cardview.widget.CardView android:id="@+id/tile_mantras"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginEnd="6dp"
+                    app:cardBackgroundColor="@color/bg_elevated" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="🔖" android:textSize="24sp" android:layout_marginBottom="8dp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Mantras" android:textColor="@color/text_primary" android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="My List ›" android:textColor="@color/text_muted" android:textSize="12sp"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:id="@+id/tile_focus"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="6dp"
+                    app:cardBackgroundColor="@color/bg_elevated" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="16dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="🌙" android:textSize="24sp" android:layout_marginBottom="8dp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Focus Mode" android:textColor="@color/text_primary" android:textSize="14sp"
+                            android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Off ›" android:textColor="@color/text_muted" android:textSize="12sp"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Goal selector -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+                <TextView android:id="@+id/goal_108" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="108" android:gravity="center"
+                    android:background="@drawable/bg_goal_selected" android:textColor="@color/accent"
+                    android:textSize="13sp" android:padding="10dp" android:layout_marginEnd="6dp" />
+                <TextView android:id="@+id/goal_216" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="216" android:gravity="center"
+                    android:background="@drawable/bg_goal_unselected" android:textColor="@color/text_muted"
+                    android:textSize="13sp" android:padding="10dp" android:layout_marginEnd="6dp" />
+                <TextView android:id="@+id/goal_540" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="540" android:gravity="center"
+                    android:background="@drawable/bg_goal_unselected" android:textColor="@color/text_muted"
+                    android:textSize="13sp" android:padding="10dp" android:layout_marginEnd="6dp" />
+                <TextView android:id="@+id/goal_1080" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="1080" android:gravity="center"
+                    android:background="@drawable/bg_goal_unselected" android:textColor="@color/text_muted"
+                    android:textSize="13sp" android:padding="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

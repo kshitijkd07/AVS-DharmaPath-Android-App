@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Dharma Path</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_jaap">Jaap</string>
+    <string name="nav_astro">Astro</string>
+    <string name="nav_puja">Puja</string>
+    <string name="nav_profile">Profile</string>
+</resources>

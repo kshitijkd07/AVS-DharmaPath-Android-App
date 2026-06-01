@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment android:id="@+id/onboardingFragment"
+        android:name="com.paid.myapplication.ui.fragments.OnboardingFragment"
+        android:label="Onboarding">
+        <action android:id="@+id/action_onboarding_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/onboardingFragment" app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment android:id="@+id/loginFragment"
+        android:name="com.paid.myapplication.ui.fragments.LoginFragment"
+        android:label="Login">
+        <action android:id="@+id/action_login_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment" app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment android:id="@+id/homeFragment"
+        android:name="com.paid.myapplication.ui.fragments.HomeFragment"
+        android:label="Home"/>
+
+    <fragment android:id="@+id/jaapFragment"
+        android:name="com.paid.myapplication.ui.fragments.JaapFragment"
+        android:label="Jaap"/>
+
+    <fragment android:id="@+id/palmReadingFragment"
+        android:name="com.paid.myapplication.ui.fragments.PalmReadingFragment"
+        android:label="Astro"/>
+
+    <fragment android:id="@+id/pujaFragment"
+        android:name="com.paid.myapplication.ui.fragments.PujaFragment"
+        android:label="Puja"/>
+
+    <fragment android:id="@+id/pujaDetailFragment"
+        android:name="com.paid.myapplication.ui.fragments.PujaDetailFragment"
+        android:label="Puja Detail">
+        <argument android:name="pujaId" app:argType="integer" android:defaultValue="1"/>
+    </fragment>
+
+    <fragment android:id="@+id/profileFragment"
+        android:name="com.paid.myapplication.ui.fragments.ProfileFragment"
+        android:label="Profile">
+        <action android:id="@+id/action_profile_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph" app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment android:id="@+id/subscriptionFragment"
+        android:name="com.paid.myapplication.ui.fragments.SubscriptionFragment"
+        android:label="Subscription"/>
+
+</navigation>

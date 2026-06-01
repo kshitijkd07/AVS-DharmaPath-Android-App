@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/nav_home" />
+    <item android:id="@+id/jaapFragment"
+        android:icon="@drawable/ic_jaap"
+        android:title="@string/nav_jaap" />
+    <item android:id="@+id/palmReadingFragment"
+        android:icon="@drawable/ic_astro"
+        android:title="@string/nav_astro" />
+    <item android:id="@+id/pujaFragment"
+        android:icon="@drawable/ic_puja"
+        android:title="@string/nav_puja" />
+    <item android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/nav_profile" />
+</menu>

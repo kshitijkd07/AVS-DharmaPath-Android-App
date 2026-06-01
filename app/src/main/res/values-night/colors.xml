@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Night (dark) overrides — same as the base dark palette -->
+    <color name="bg_base">#0C0F14</color>
+    <color name="bg_surface">#141820</color>
+    <color name="bg_elevated">#161C26</color>
+    <color name="bg_glass">#A6141A24</color>
+    <color name="bg_tile">#D9121822</color>
+    <color name="text_primary">#F4F5F7</color>
+    <color name="text_secondary">#9CA3B8</color>
+    <color name="text_muted">#6B7289</color>
+    <color name="accent">#E8B84A</color>
+    <color name="accent_dim">#C9A227</color>
+    <color name="accent_soft">#1FE8B84A</color>
+    <color name="border">#12FFFFFF</color>
+    <color name="border_strong">#1FFFFFFF</color>
+    <color name="purple_accent">#A78BFA</color>
+    <color name="green_accent">#4ADE80</color>
+    <color name="blue_accent">#60A5FA</color>
+    <color name="pink_accent">#F472B6</color>
+    <color name="muhurat_green_bg">#73064E3B</color>
+    <color name="muhurat_green_border">#66065F46</color>
+    <color name="muhurat_rose_bg">#59881337</color>
+    <color name="muhurat_rose_border">#599F1239</color>
+</resources>

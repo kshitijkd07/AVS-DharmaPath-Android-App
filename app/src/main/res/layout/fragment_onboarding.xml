@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_base"
+    android:padding="16dp">
+
+    <!-- Step card (flex-1 spirit-card) -->
+    <androidx.cardview.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:cardBackgroundColor="@color/bg_elevated"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical" android:gravity="center" android:padding="32dp">
+
+            <!-- Subtitle -->
+            <TextView android:id="@+id/tv_step_subtitle" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="SPIRITUAL OS"
+                android:textColor="@color/accent" android:textSize="10sp"
+                android:textAllCaps="true" android:letterSpacing="0.2"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Title -->
+            <TextView android:id="@+id/tv_step_title" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Dharma Path"
+                android:textColor="@color/text_primary" android:textSize="36sp"
+                android:textStyle="bold" android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Icon / Logo -->
+            <TextView android:id="@+id/tv_step_icon" android:layout_width="80dp"
+                android:layout_height="80dp" android:text="🙏" android:textSize="48sp"
+                android:gravity="center" android:background="@drawable/bg_circle_accent"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Description -->
+            <TextView android:id="@+id/tv_step_desc" android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your daily guide for devotion, ritual, and calm."
+                android:textColor="@color/text_secondary" android:textSize="14sp"
+                android:gravity="center" android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Features grid (step 3) -->
+            <LinearLayout android:id="@+id/ll_features" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical"
+                android:visibility="gone">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="8dp">
+                    <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginEnd="6dp"
+                        app:cardBackgroundColor="@color/bg_surface" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:padding="14dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="📅" android:textSize="20sp" android:layout_marginBottom="6dp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Panchang" android:textColor="@color/text_primary"
+                                android:textSize="13sp" android:textStyle="bold" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Daily ›" android:textColor="@color/text_muted" android:textSize="11sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="6dp"
+                        app:cardBackgroundColor="@color/bg_surface" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:padding="14dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="📿" android:textSize="20sp" android:layout_marginBottom="6dp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Jaap Mala" android:textColor="@color/text_primary"
+                                android:textSize="13sp" android:textStyle="bold" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Counter ›" android:textColor="@color/text_muted" android:textSize="11sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginEnd="6dp"
+                        app:cardBackgroundColor="@color/bg_surface" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:padding="14dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="✨" android:textSize="20sp" android:layout_marginBottom="6dp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="AI Palm" android:textColor="@color/text_primary"
+                                android:textSize="13sp" android:textStyle="bold" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Read ›" android:textColor="@color/text_muted" android:textSize="11sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="6dp"
+                        app:cardBackgroundColor="@color/bg_surface" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:padding="14dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="🔥" android:textSize="20sp" android:layout_marginBottom="6dp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Puja" android:textColor="@color/text_primary"
+                                android:textSize="13sp" android:textStyle="bold" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Guides ›" android:textColor="@color/text_muted" android:textSize="11sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Personalize form (step 4) -->
+            <LinearLayout android:id="@+id/ll_form" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical"
+                android:visibility="gone">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="YOUR NAME" android:textColor="@color/text_muted" android:textSize="11sp"
+                    android:textAllCaps="true" android:layout_marginBottom="6dp" />
+                <EditText android:id="@+id/et_ob_name" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:background="@drawable/bg_input"
+                    android:textColor="@color/text_primary" android:textSize="15sp"
+                    android:padding="14dp" android:hint="Kshitij" android:textColorHint="@color/text_muted"
+                    android:layout_marginBottom="12dp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="CITY" android:textColor="@color/text_muted" android:textSize="11sp"
+                    android:textAllCaps="true" android:layout_marginBottom="6dp" />
+                <EditText android:id="@+id/et_ob_city" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:background="@drawable/bg_input"
+                    android:textColor="@color/text_primary" android:textSize="15sp"
+                    android:padding="14dp" android:hint="Agra" android:textColorHint="@color/text_muted"
+                    android:layout_marginBottom="12dp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="DEITY" android:textColor="@color/text_muted" android:textSize="11sp"
+                    android:textAllCaps="true" android:layout_marginBottom="6dp" />
+                <Spinner android:id="@+id/spinner_deity" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:background="@drawable/bg_input"
+                    android:padding="14dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Progress dots + Continue button -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingTop="24dp">
+
+        <LinearLayout android:id="@+id/ll_dots" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:orientation="horizontal"
+            android:layout_gravity="center_horizontal" android:layout_marginBottom="24dp" />
+
+        <Button android:id="@+id/btn_continue" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:background="@drawable/bg_button_gold"
+            android:text="Get Started  →" android:textColor="@color/bg_base"
+            android:textStyle="bold" android:textSize="16sp" android:padding="16dp" />
+    </LinearLayout>
+</LinearLayout>

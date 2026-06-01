@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_base">
+
+    <!-- Header -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+        <ImageView android:id="@+id/btn_back" android:layout_width="36dp" android:layout_height="36dp"
+            android:background="@drawable/bg_circle_border" android:src="@drawable/ic_back"
+            android:padding="8dp" android:contentDescription="Back"/>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
+            <TextView android:id="@+id/tv_deity" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textColor="@color/accent" android:textSize="11sp" android:textStyle="bold"/>
+            <TextView android:id="@+id/tv_title" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textColor="@color/text_primary"
+                android:textSize="20sp" android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Tab bar -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="16dp">
+        <TextView android:id="@+id/tab_overview" android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Overview" android:gravity="center"
+            android:background="@drawable/bg_tab_selected" android:textColor="@color/accent"
+            android:textSize="13sp" android:textStyle="bold" android:padding="10dp"/>
+        <TextView android:id="@+id/tab_samagri" android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Samagri" android:gravity="center"
+            android:background="@drawable/bg_tab_unselected" android:textColor="@color/text_muted"
+            android:textSize="13sp" android:padding="10dp" android:layout_marginStart="4dp"/>
+        <TextView android:id="@+id/tab_vidhi" android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="Vidhi" android:gravity="center"
+            android:background="@drawable/bg_tab_unselected" android:textColor="@color/text_muted"
+            android:textSize="13sp" android:padding="10dp" android:layout_marginStart="4dp"/>
+    </LinearLayout>
+
+    <!-- Content -->
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <!-- Overview panel -->
+            <LinearLayout android:id="@+id/panel_overview" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical">
+                <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="@color/bg_elevated" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                    <TextView android:id="@+id/tv_overview" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:textColor="@color/text_secondary"
+                        android:textSize="14sp" android:lineSpacingExtra="4dp" android:padding="20dp"/>
+                </androidx.cardview.widget.CardView>
+                <Button android:id="@+id/btn_to_samagri" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:background="@drawable/bg_button_gold"
+                    android:text="Check Samagri" android:textColor="@color/bg_base"
+                    android:textStyle="bold" android:padding="12dp"/>
+            </LinearLayout>
+
+            <!-- Samagri panel -->
+            <LinearLayout android:id="@+id/panel_samagri" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="@color/bg_elevated" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                    <LinearLayout android:id="@+id/ll_samagri_items" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:orientation="vertical"/>
+                </androidx.cardview.widget.CardView>
+                <Button android:id="@+id/btn_to_vidhi" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:background="@drawable/bg_button_gold"
+                    android:text="Start Vidhi" android:textColor="@color/bg_base"
+                    android:textStyle="bold" android:padding="12dp"/>
+            </LinearLayout>
+
+            <!-- Vidhi panel -->
+            <LinearLayout android:id="@+id/panel_vidhi" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                <LinearLayout android:id="@+id/ll_vidhi_steps" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical"/>
+                <Button android:id="@+id/btn_complete" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:background="@drawable/bg_button_gold"
+                    android:text="Complete Puja ✓" android:textColor="@color/bg_base"
+                    android:textStyle="bold" android:padding="12dp" android:layout_marginTop="12dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
